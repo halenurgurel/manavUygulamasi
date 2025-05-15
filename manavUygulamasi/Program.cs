@@ -1,4 +1,5 @@
-﻿/*using System;
+﻿/*
+using System;
 
 namespace ManavIfYapisi
 {
@@ -6,44 +7,37 @@ namespace ManavIfYapisi
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Elma 2 TL");
+            Console.WriteLine("Armut 3 TL");
+            Console.WriteLine("Çilek 2 TL");
+            Console.WriteLine("Muz 3 TL");
+            Console.WriteLine("Diğer meyveler 4 TL");
             Console.Write("Hangi meyveyi almak istiyorsunuz? ");
+
+
             string fruit = Console.ReadLine().ToLower();
             int price = 0;
 
-            if (fruit == "elma")
-            {
-                price= 2;
-            }
-            else if (fruit == "armut")
-            {
-                price = 3;
-            }
-            else if (fruit == "çilek")
+            if (fruit == "elma" || fruit == "çilek")
             {
                 price = 2;
             }
-            else if (fruit == "muz")
+            else if (fruit == "armut" || fruit == "muz")
             {
                 price = 3;
             }
-            else if (fruit != "")
-            {
-                price = 4;
-                Console.WriteLine($"{fruit} diğer meyve kategorisinde.");
-            }
             else
             {
-                Console.WriteLine("Hiçbir meyve girmediniz.");
+                price = 4;
             }
 
-            if (fruit != "")
-            {
-                Console.WriteLine($"Fiyat: {price}₺");
-            }
-        } if yapısıyla hepsini tek tek kontrol edeceği için efektif olmayacak.
+                Console.WriteLine($"Seçtiğiniz meyvenin fiyatı: {price}");
+        } //if yapısıyla hepsini tek tek kontrol edeceği için efektif olmayacak.
     }
 }
 */
+
+
 
 
 using System;
@@ -54,42 +48,32 @@ namespace ManavSwitchYapisi
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Elma 2 TL");
+            Console.WriteLine("Armut 3 TL");
+            Console.WriteLine("Çilek 2 TL");
+            Console.WriteLine("Muz 3 TL");
             Console.Write("Hangi meyveyi almak istiyorsunuz? ");
+            Console.WriteLine("Diğer meyveler 4 TL");
             string fruit = Console.ReadLine().ToLower();
             int price = 0;
 
             switch (fruit)
             {
                 case "elma":
-                    price = 2;
-                    break;
-                case "armut":
-                    price = 3;
-                    break;
                 case "çilek":
                     price = 2;
                     break;
+                case "armut":
                 case "muz":
                     price = 3;
                     break;
                 default:
-                    if (fruit != "")
-                    {
-                        price = 4;
-                        Console.WriteLine($"{fruit} 4 TL.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Hiçbir meyve girmediniz.");
-                    }
+                    price = 4;
                     break;
             }
-
-            if (fruit != "")
-            {
-                Console.WriteLine($"Fiyat: {price}₺");
-            }
+            Console.WriteLine($"Seçtiğiniz meyvenin fiyatı: {price} TL");
         }
     }
 }
+
 // switch yapısıyla sadece istediğimiz veriyi kontrol edeceği için debuglama kısmında daha efektif çalışacak.
